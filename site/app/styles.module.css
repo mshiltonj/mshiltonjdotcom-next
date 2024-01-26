@@ -1,0 +1,24 @@
+.main {
+
+}
+
+.section {
+    border-top: 1px solid grey;
+    padding-top: .5rem;
+    margin-bottom: 2rem;
+}
+
+.section:first-child{
+    border-top: none
+}
+
+.date {
+    margin-bottom: .5rem;
+}
+
+.title {
+    font-size: 2rem;
+    line-height: 2.2rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}

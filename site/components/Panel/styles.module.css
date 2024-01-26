@@ -1,0 +1,21 @@
+.root {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #aaaaaa;
+    border-radius: .25rem;
+    margin-bottom: 1rem;
+}
+
+.h1 {
+    margin: 0;
+    font-weight: normal;
+    border-bottom: 1px solid #aaaaaa;
+    background-color: #cccccc;
+    padding: .5rem;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.inner {
+    padding: 1rem;
+}

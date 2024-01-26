@@ -1,0 +1,21 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: .5rem;
+
+    .link {
+        padding: 1rem;
+        flex: 1;
+        text-align: center;
+        color: #555;
+        transition: background-color .25s, color .25s
+
+    }
+    .link:hover {
+        background-color: #555;
+        color: var(--orange);
+        transition: background-color .25s, color .25s
+    }
+
+}

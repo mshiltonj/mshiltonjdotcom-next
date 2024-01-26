@@ -1,0 +1,12 @@
+version: "3"
+services:
+  site:
+    build:
+      context: .
+    command: tail -f /dev/null
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/appuser/app
+      - ~/.git:/home/appuser/.git
+      - ~/.gitconfig:/home/appuser/.gitconfig

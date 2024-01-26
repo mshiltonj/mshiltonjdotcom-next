@@ -1,0 +1,25 @@
+
+@keyframes typey{
+    from { width: 0rem };
+    to { width: 23.4rem };
+}
+
+.root {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+} 
+
+.header {
+    overflow: hidden;
+    width: 24rem;
+    font-size: 3rem;
+    line-height: 3rem;
+    animation: typey 1.25s steps(13, end) forwards;
+}
+
+.logo {
+    height: 128px;
+    width: 128px;
+}

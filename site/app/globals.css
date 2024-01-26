@@ -1,0 +1,73 @@
+:root {
+  --orange: #c36d00;
+  --black: #000000;
+}
+body {
+  margin: 0;
+  line-height: 1.25rem;
+  display: grid;
+  grid-template: 
+    "header header header"
+    "nav nav nav"
+    "pri pri pri"
+    "footer footer footer"
+  ;
+  grid-template-columns: 1fr 1fr 25%;
+
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 11pt;
+}
+
+body header {
+  padding: 2rem 12% 0 12%;
+  grid-area: header;
+  background: var(--black);
+  color: var(--orange);
+}
+
+body .pri {
+  grid-area: pri;
+  display: grid;
+  padding: 1rem 12% 0 12%;
+  gap: 1rem;
+  grid-template: 
+  "main aside"
+  ;
+  grid-template-columns: 1fr 25%;
+;
+}
+
+body nav {
+  grid-area: nav;
+  padding:0 12% 0 12%;
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #555;
+  background-color: lightgray;
+}
+
+body footer {
+  grid-area: footer;
+  padding: 0 12% 0 12%;
+}
+
+.pri .main {
+  grid-area: main;
+}
+
+.pri aside {
+  grid-area: aside;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+}
+
+aside ul {
+  margin: 0;
+  padding: 0;
+}
+
+aside li {
+  padding: 0;
+  list-style: none;
+}
