@@ -1,5 +1,7 @@
 ---
 title: How's the view up there?
+published: 2006-06-26
+tags: [business, humor]
 ---
 Manager-types like to look at things from a "high level." Instead of worrying about the crucial details of a project, they prefer to be a bit further off, so they can see issues from multiple angles, and how those issues relate to each other.
 

@@ -1,5 +1,6 @@
 ---
 title: Halloween cards are supposed to be scary
+published: 2007-11-13
 ---
 
 My seven year old daughter made a Halloween card for her grandmother. On the back of the card, she drew a pretty butterfly. The butterfly was happy. Tara added glitter to the card to make the butterfly nice and sparkly. Then, she remembered that Halloween cards are "supposed to be scary." So she changed the card a bit….

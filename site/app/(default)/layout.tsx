@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import './globals.css'
+import '../globals.css'
 import Link from 'next/link'
 
-import Nav from '../components/Nav'
-import Aside from '../components/Aside'
-import Footer from '../components/Footer'
-import Header from '../components/Header'
+import Nav from '../../components/Nav'
+import Aside from '../../components/Aside'
+import Footer from '../../components/Footer'
+import Header from '../../components/Header'
 
 export const metadata: Metadata = {
   title: 'mshiltonj.com',

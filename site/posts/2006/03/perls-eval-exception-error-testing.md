@@ -1,5 +1,7 @@
 ---
 title: "Head-to-Head: perl's eval, Exception.pm, Exception/Class.pm and Error.pm"
+published: 2022-03-02
+tags: [ programming, perl ]
 ---
 
 I wanted to use a more OO approach to error handling in perl instead of just plain old eval, so I did some looking around. I wanted it to be easy, so I looked at these modules:
