@@ -1,20 +1,19 @@
 import Link from "next/link"
+import blog_util from "@/utils/blog_utils"
+
 
 import Panel from "../Panel"
-export default function Categories(){
+export default async function Categories(){
+    const tags : string[] = Array.from(await blog_util.getTags()).sort()
+
     return <Panel title="Categories">
         <ul>
-            <li>
-                <Link href="/foo">general</Link>
-            </li>
-            <li>
-                <Link href="/foo">programming</Link>
-            </li>
-            <li>
-                <Link href="/foo">kubernetes</Link>
-            </li>
+            { tags.map((tag) => {
+                return <li>
+                    <Link href={"/tags/" + tag}>{tag}</Link>
+                </li>
+            })}
+
         </ul>
-
     </Panel>
-
 }

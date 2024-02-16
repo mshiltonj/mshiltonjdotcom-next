@@ -2,10 +2,10 @@ import fsPromises from 'fs/promises'
 import { marked } from 'marked'
 import parseMD from 'parse-md'
 
-
 type PostMetadataType = {
   title: string,
   published?: Date | string,
+  tags: string[],
   slug?: string,
 }
 
@@ -70,7 +70,15 @@ async function mostRecentlyPublishedPosts(count: number, files : string[] | null
   return mostRecentFiles
 }
 
+async function getMetadataFromFullFile(file: string){
+  return await getDataFromFullFile(file, "meta") as PostMetadataType
+}
+
 async function getPostFromFullFile(file: string){
+  return await getDataFromFullFile(file, "post") as BlogPostType
+}
+
+async function getDataFromFullFile(file: string, type: "meta" | "post" ) : Promise<PostMetadataType | BlogPostType>{
   const fh = await fsPromises.open(file, 'r')
   
   const [YYYY, MM, slug] = file.split("/").slice(-3).map((s) => {
@@ -82,16 +90,35 @@ async function getPostFromFullFile(file: string){
     fh.close()
     const { metadata, content } = parseMD(fileContents)
 
-    const blogPost : BlogPostType = {
-      metadata: metadata as PostMetadataType,
-      content: marked.parse(content) as string,
-      url: "/blog/" + YYYY + "/" + MM + "/" + slug
+    if (type === "meta") {
+      return metadata as PostMetadataType
+    } else {
+      const blogPost : BlogPostType = {
+        metadata: metadata as PostMetadataType,
+        content: marked.parse(content) as string,
+        url: "/blog/" + YYYY + "/" + MM + "/" + slug
+      }
+      return blogPost
     }
-
-    return blogPost
   } else {
     throw new Error("File not found")
   }
+}
+
+async function getTags() : Promise<Set<string>> {
+  const files = await deepDirListing(process.cwd() + "/posts", /.md$/)
+  const tags = new Set<string>()
+  for (const file of files) {
+    const metadata = await getMetadataFromFullFile(file)
+    if (metadata.tags) {
+      for (const tag of metadata.tags) {
+        tags.add(tag)
+      }
+    }
+
+  }
+
+  return tags
 }
 
 async function getPost(slug: string, YYYY: string, MM: string) {
@@ -102,10 +129,11 @@ async function getPost(slug: string, YYYY: string, MM: string) {
 
 export default {
   deepDirListing,
+  getTags,
   getPost,
   getPostFromFullFile,
-  mostRecentlyPublishedPosts,
-  
+  getMetadataFromFullFile,
+  mostRecentlyPublishedPosts  
 }
 
 export type { PostMetadataType , BlogPostType}
