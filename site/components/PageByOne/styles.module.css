@@ -1,0 +1,16 @@
+.page_by_one {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem 0;
+  margin: 1rem 0 ;
+  border: 1px solid #666;
+  border-radius: .5rem;
+  background-color: #fff;
+}
+
+.a {
+  text-decoration: none;
+}

@@ -1,4 +1,7 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
+import './globals.css'
+import Panel from '@/components/Panel'
 
 export default function Layout({
   children,
@@ -7,40 +10,32 @@ export default function Layout({
 }) {
   return (<html>
     <head>
-      <title>Softare Wars</title>
+      <title>Software Wars</title>
     </head>
     <body>
+      <Link href="/software_wars">Software Wars</Link>
+    <div><a href="/">&lt;&lt; mshiltonj.com</a></div>
+    <h1>Software Wars</h1>
+    <h2>A map depicting the epic struggle of Free and Open Source Software (FOSS) against the Empire of Microsoft</h2>
+    <p>
+      The original Software Wars Map, created by Andy Tai, began in 1998 when Netscape first announced it was going to open source the browser code. He updated it a couple times a year after that for a while. As often happens, Mr. Tai became too busy, and the Map was not updated for several years.
+    </p>
+    <p>Inspired by his original work, the Software Wars Map is now maintained here.</p>
+    
+    <p>The map was created using Inkscape and GIMP on Ubuntu Linux.</p>
       {children}
 
       <aside>
-      <h2>Earlier Maps (Andy Tai)</h2>
-    <ul>
-      <li><a href="./archive/20060129/">January 26, 2006</a></li>
-      <li><a href="./archive/2003/">2003</a></li>
-      <li><a href="./archive/200202/">February, 2002</a></li>
-      <li><a href="./archive/200010/">October, 2000</a></li>
-      <li><a href="./archive/200005/">May, 2000</a></li>
-      <li><a href="./archive/199909/">September, 1999</a></li>
-      <li><a href="./archive/199901/">January, 1999</a></li>
-      <li><a href="./archive/199808/">August, 1998</a></li>
-      <li><a href="./archive/199805/">May, 1998</a></li>
-      <li><a href="./archive/199803">March, 1998</a></li>
-    </ul>
-      </aside>
-
-
-      <aside>
-        <p>
-          <strong>More info about Free Software and general software freedom:</strong><br />
-        </p>
-
+        <Panel title="About Software Freedom">
         <ul>
           <li><a href="http://www.gnu.org/philosophy/free-sw.html">What is Free Software?</a></li>
-          <li><a href="http://www.fsf.org/"><img src="./fsf.png" /></a><a href="http://www.fsf.org/">Free Software Foundation</a></li>
-          <li><a href="http://www.gnu.org/"><img src="./gnu.jpg" /></a><a href="http://www.gnu.org/">GNU's Not Unix</a></li>
+          <li><a href="http://www.fsf.org/"><img src="/images/fsf.png" /></a><a href="http://www.fsf.org/">Free Software Foundation</a></li>
+          <li><a href="http://www.gnu.org/"><img src="/images/gnu.png" /></a><a href="http://www.gnu.org/">GNU's Not Unix</a></li>
           <li><a href="http://www.gnu.org/copyleft/gpl.html">General Public License</a></li>
-          <li><a href="http://www.opensource.org/"><br /><img src="./opensource.png" /></a><a href="http://www.opensource.org/">Open Source Initiative</a></li>
+          <li><a href="http://www.opensource.org/"><br /><img src="/images/opensource.png" /></a><a href="http://www.opensource.org/">Open Source Initiative</a></li>
         </ul>
+        </Panel>
+
       </aside>
     </body>
   </html>
