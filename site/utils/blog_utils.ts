@@ -100,7 +100,6 @@ async function getPost(slug: string, YYYY: string, MM: string) {
   return blogPost
 }
 
-
 export default {
   deepDirListing,
   getPost,
@@ -109,4 +108,4 @@ export default {
   
 }
 
-export type { PostMetadataType }
+export type { PostMetadataType , BlogPostType}

@@ -1,4 +1,4 @@
-import blogUtils from '../../../../../utils/blog_utils'
+import blogUtils from '@/utils/blog_utils'
 
 import styles from "./styles.module.css"
 
