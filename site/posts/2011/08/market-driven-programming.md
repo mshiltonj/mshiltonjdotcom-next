@@ -6,7 +6,7 @@ The latest turn in the computer science industry is a new development process ca
 
 It is designed to make it easier for people who don’t have programming experience, but who do work in the Marketing Department, to develop applications independently of a technology or programming staff.
 
-<!--- break --->
+<!--- break -->
 
 Marketing Driven Programming requires a voice-recognition element, because people from Marketing Department are (seemingly) much clearer when speaking, but the meaning of their thoughts are completely lost when committed to the written word and are able to be systematically analyzed.
 

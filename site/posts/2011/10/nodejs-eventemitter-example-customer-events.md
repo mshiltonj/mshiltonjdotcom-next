@@ -11,6 +11,8 @@ A good example of an event emitter needs three things:
 
 Using node v0.4.11-pre, here is a small example illustrating custom event handling using EventEmitter.
 
+<!--- break -->
+
 We need two modules from node:
 
     var events = require('events');

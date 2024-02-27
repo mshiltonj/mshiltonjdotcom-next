@@ -4,6 +4,8 @@ published: 2006-03-30
 ---
 I hate job listings that describe what the job might become in the future if the immediate project is successful. It seems inherently dishonest to tempt people to apply for a possible good future job as a package deal with a current lower-paying, short-term job.
 
+<!--- break -->
+
 I’m not really looking for a work. I bitch and moan about my current job a lot, but I know it’s a pretty good place. (That didn’t come from me ;-) I do, however, subscribe to the [jobs.perl.org](https://jobs.perl.org/) [telecommute rss feed](https://jobs.perl.org/rss/telecommute.rss). Why? It’d be nice to find some part-time telecommute work to do on evenings and weekends. Maybe hone some new skills and bring in a few extra bucks at the same time. Not that I have a lot of free time, mind you – I’ve got two kids, and the wife and I are trying to paint the house.
 
 Anyway, I see on a number of number of job postings, not just on perl jobs, some verbiage like this:

@@ -15,6 +15,22 @@ type BlogPostType = {
   url: string,
 }
 
+
+async function deepDirOnlyDirs(path : string) {
+  let fsDirs : string[] = await fsPromises.readdir(path)
+  let outgoingDirs : string[] = []
+  for (const dir of fsDirs){
+    const fullPath = path + "/" + dir
+    const stat = await fsPromises.stat(fullPath)
+    if (stat.isDirectory()){
+      outgoingDirs.push(fullPath)
+      const subDirs = await deepDirOnlyDirs(fullPath)
+      outgoingDirs = outgoingDirs.concat(subDirs)
+    }
+  }
+  return outgoingDirs
+}
+
 async function deepDirListing(path : string, match: RegExp = /.*/) {
   let files : string[] = await fsPromises.readdir(path)
   let outgoingFiles : string[] = []
@@ -47,21 +63,21 @@ async function mostRecentlyPublishedPosts(count: number, files : string[] | null
       fh.close()
       const { metadata } = parseMD(fileContents)
       const typedMetadata = metadata as PostMetadataType
-      console.log("--------------file", file, typedMetadata.published)
+      // console.log("--------------file", file, typedMetadata.published)
       if (typedMetadata.published) {
-        console.log("--------------file typed", file, typedMetadata.published)
+        // console.log("--------------file typed", file, typedMetadata.published)
         filePublishTimes.set(file, new Date(typedMetadata.published))
       }    
     }
   }
 
-  console.log("--------------filePublishTimes", filePublishTimes)
+  // console.log("--------------filePublishTimes", filePublishTimes)
 
   const sortedFiles = Array.from(filePublishTimes.entries()).sort((a, b) => {
     return b[1].getTime() - a[1].getTime()
   })
 
-  console.log("--------------sortedFiles", sortedFiles)
+  // console.log("--------------sortedFiles", sortedFiles)
 
   const mostRecentFiles = sortedFiles.slice(0, count).map((file) => {
     return file[0]
@@ -129,6 +145,7 @@ async function getPost(slug: string, YYYY: string, MM: string) {
 
 export default {
   deepDirListing,
+  deepDirOnlyDirs,
   getTags,
   getPost,
   getPostFromFullFile,

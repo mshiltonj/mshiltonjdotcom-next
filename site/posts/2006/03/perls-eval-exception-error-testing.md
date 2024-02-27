@@ -1,6 +1,6 @@
 ---
 title: "Head-to-Head: perl's eval, Exception.pm, Exception/Class.pm and Error.pm"
-published: 2022-03-02
+published: 2006-03-02
 tags: [ programming, perl ]
 ---
 
@@ -9,6 +9,8 @@ I wanted to use a more OO approach to error handling in perl instead of just pla
 * [Exception](https://search.cpan.org/%7Epjordan/Exception-1.7/Exception.pm)
 * [Error](https://search.cpan.org/%7Euarun/Error-0.15/Error.pm)
 * [Exception::Class](https://search.cpan.org/%7Edrolsky/Exception-Class/)
+
+<!--- break -->
 
 I also found this article on perl exception handling: Object Oriented Exception Handling in Perl. That sounded great and all, but what would I be giving up?
 

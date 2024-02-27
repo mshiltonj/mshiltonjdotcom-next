@@ -7,6 +7,8 @@ Manager-types like to look at things from a "high level." Instead of worrying ab
 
 I don’t have anything against this. But some managers can be very literal about how "high up" they are when looking at the problem.
 
+<!--- break -->
+
 I’ve been in meetings (and meetings, and meetings…) where a given manager of the current project will mention how high up he is when looking at the issue, saying something like, "If we look at this at the 5,000-foot level, we can see…." They usually lift their arm above their head, away from their body, and hold their hand flat, indicating how high up they were when they last looked at the issue.
 
 Now, if one manager was looking at the problem from just 5,000 feet, wouldn’t a better manager want to look at the problem from say, 10,000 feet? That way, they could get the "really broad view" they needed to really "get their head around the problem."
