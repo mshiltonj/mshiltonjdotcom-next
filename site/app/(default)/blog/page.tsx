@@ -1,25 +1,25 @@
 import blog_utils from "@/utils/blog_utils";
+import Config from "@/app.config"
+import BlogPostCard from "@/components/BlogPostCard";
+import Paginator from "@/components/Paginator";
 
 export default async function Page(){
-  const recentBlogFiles = await blog_utils.mostRecentlyPublishedPosts(10);
-  let recentBlogPosts = []
-  for(const file of recentBlogFiles){
+  const start = 0
+  const end = start + Config.PER_PAGE
+  const allFilesListing = (await blog_utils.deepDirListing(process.cwd() + "/posts", /.md$/)).reverse()
+  const thisPageFiles = allFilesListing.slice(start, end)
+  const blogFiles = thisPageFiles
+
+  let blogPosts = []
+  for(const file of blogFiles){
     const parsedBlogPost = await blog_utils.getPostFromFullFile(file);
-    console.log(parsedBlogPost.content.split("<!--- break -->")[0])
-    recentBlogPosts.push(parsedBlogPost)
+    blogPosts.push(parsedBlogPost)
   }
 
-  return <div>
-    {
-      recentBlogPosts.map((post) => (
-      <section key={Math.random()}>
-        <div>published: {(post.metadata.published as Date).toISOString().slice(0,10)}</div>
-        <h1>{post.metadata.title}</h1>
-        
-        <div dangerouslySetInnerHTML={{__html: (post.content as string).split("<!--- break -->")[0] }} />
-        <div><a href={post.url}>Read more...</a></div>
-      </section>        
-      ))
-    }
+  return <div> 
+    { blogPosts.map((blogPost) => {
+      return <BlogPostCard post={blogPost} />
+    })}
+    <Paginator currentPage={0} totalEntries={allFilesListing.length} />
   </div>
 }

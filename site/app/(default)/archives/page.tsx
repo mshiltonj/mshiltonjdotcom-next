@@ -36,7 +36,6 @@ export default async function Page(){
       return <div>
         <div>{year}</div>
           { filesByYear.get(year)?.map((month) => {
-              { console.log(month) }
               return <span>
                 <Link href={`/blog/${year}/${month}`}>{dates.monthNumToString(month)}</Link> 
               </span>

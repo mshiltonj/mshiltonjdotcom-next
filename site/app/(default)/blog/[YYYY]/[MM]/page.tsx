@@ -11,7 +11,7 @@ export async function generateStaticParams(){
     }
   }).filter((date) => typeof date !== "undefined" )
 
-  console.log("blogDatesss", blogDates)
+  // console.log("blogDates", blogDates)
 
   return blogDates
 }
