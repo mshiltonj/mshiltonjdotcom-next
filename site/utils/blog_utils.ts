@@ -12,6 +12,7 @@ type PostMetadataType = {
 type BlogPostType = {
   metadata: PostMetadataType,
   content: string,
+  tags?: string[],
   url: string,
 }
 

@@ -4,7 +4,7 @@ import BlogPostCard from "@/components/BlogPostCard"
 import Paginator from "@/components/Paginator"
 
 export async function generateStaticParams(){
-  const filesListing = (await blog_utils.deepDirListing(process.cwd() + "/posts", /.md$/)).reverse().slice(Config.PER_PAGE)
+  const filesListing = (await blog_utils.deepDirListing(process.cwd() + "/posts", /.md$/)).reverse()
   const numPages = Math.ceil(filesListing.length / Config.PER_PAGE)
   const dynamicParams = [...Array(numPages)].map((_, i) => { return {page: (i+1).toString()}})
   return dynamicParams
@@ -27,6 +27,6 @@ export default async function Page({ params }: {params: { page: string }}){
     { blogPosts.map((blogPost) => {
       return <BlogPostCard post={blogPost} />
     })}
-    <Paginator currentPage={parseInt(params.page)} totalEntries={allFilesListing.length} />
+    <Paginator path="/blog" currentPage={parseInt(params.page)} totalEntries={allFilesListing.length} />
   </div>
 }

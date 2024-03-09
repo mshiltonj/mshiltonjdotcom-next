@@ -3,6 +3,8 @@ import Config from "@/app.config"
 import BlogPostCard from "@/components/BlogPostCard";
 import Paginator from "@/components/Paginator";
 
+import styles from "./styles.module.css"
+
 export default async function Page(){
   const start = 0
   const end = start + Config.PER_PAGE
@@ -18,8 +20,8 @@ export default async function Page(){
 
   return <div> 
     { blogPosts.map((blogPost) => {
-      return <BlogPostCard post={blogPost} />
+      return <BlogPostCard className={styles.blog_card} post={blogPost} />
     })}
-    <Paginator currentPage={0} totalEntries={allFilesListing.length} />
+    <Paginator path="/blog" currentPage={0} totalEntries={allFilesListing.length} />
   </div>
 }
