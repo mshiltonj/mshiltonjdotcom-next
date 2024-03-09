@@ -1,6 +1,9 @@
 ---
 title: Market Driven Programming
 published: 2011-08-17
+tags:
+  - business
+  - humor
 ---
 The latest turn in the computer science industry is a new development process called "Marketing Driven Programming."
 

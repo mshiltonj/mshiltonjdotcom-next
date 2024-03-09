@@ -1,6 +1,8 @@
 ---
 title: Job listing red flag - "part-time position may become permanent" 
 published: 2006-03-30
+tags:
+  - business
 ---
 I hate job listings that describe what the job might become in the future if the immediate project is successful. It seems inherently dishonest to tempt people to apply for a possible good future job as a package deal with a current lower-paying, short-term job.
 

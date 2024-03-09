@@ -1,6 +1,9 @@
 ---
 title: Nodejs EventEmitter Example With Custom Events
 published: 2011-10-04
+tags:
+  - programming
+  - node
 ---
 
 A good example of an event emitter needs three things:
