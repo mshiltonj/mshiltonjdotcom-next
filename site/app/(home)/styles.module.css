@@ -1,0 +1,87 @@
+.home {
+  --background-color: orange;
+  --keyword-gap: 1rem;
+  --home-padding: 3rem;
+  --home-margin: 3vh;
+
+  display: flex;
+  height: calc(100vh - (2 * var(--home-margin)));
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: var(--home-margin);
+  padding: var(--home-padding);
+  background-color: var(--background-color);
+  border: .5rem solid orangered;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-weight: 600;
+  font-size: max(5vw, 28pt);
+  text-align: center;
+
+  .login {
+    font-size: max(3.5vw, 22pt);
+  }
+
+  & a { 
+    border-radius: .5rem;
+    padding: .5rem 2rem;
+    display: inline-block;
+    color: black;
+    text-decoration: none; 
+    background-color: orangered;
+
+  
+  }
+}
+
+
+.keywords {
+  display: flex;
+  gap: var(--keyword-gap);
+  padding: 0px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+  font-size: 16pt;
+  text-indent: 0;
+}
+
+.logo {
+  margin: 1rem;
+  min-width: 100px;
+  max-width: 150px;
+  width:15vw;
+}
+
+.keywords li {
+  font-family: sans-serif;
+  list-style-type: none;
+  font-weight: normal;
+}
+
+
+
+/* @media screen and (){
+
+} */
+
+
+@media screen and (max-width: 640px) {
+  .home {
+    --keyword-gap: .5rem;
+    /* margin: 1rem; */
+    /* font-size: 24pt; */
+  }
+
+  .keywords li {
+    padding: var(--padding);
+  }
+  .inner {
+    transform: translateY(0);
+  }
+
+  .keywords {
+    font-size: 12pt;
+  }
+  
+}

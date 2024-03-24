@@ -5,12 +5,14 @@
   justify-content: center;
   color: #000;
   text-decoration: none;
-  padding: 0.25rem 1rem;
+  padding: 0.25rem .5rem;
   transition: background-color 0.3s;
 }
 
 .a {
   color: #000;
+  flex: 1 1 auto;
+  text-align: center;
   text-decoration: none;
   padding: 0.25rem 2rem;
   border: 1px solid #000;
@@ -26,4 +28,12 @@
 .a_disabled {
   color: #aaa;
   border: 1px solid #aaa;
+}
+
+@media (max-width: 640px){
+  .paginator {
+    flex-direction: column;
+    gap: .25rem;
+  }
+
 }

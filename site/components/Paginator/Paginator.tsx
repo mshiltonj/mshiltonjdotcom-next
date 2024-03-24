@@ -21,9 +21,9 @@ export default function Paginator({path, currentPage, totalEntries}: PaginatorPr
   console.log("prevPageLink:", prevPageLink)
 
   return <div className={styles.paginator}>
-    { hasStart ? <Link className={styles.a} href={ path }>&lt;&lt; Start</Link> : <span className={styles.a + " " +  styles.a_disabled}>Start</span> }
-    { hasPrevious ? <Link className={styles.a} href={ prevPageLink }>&lt; Previous</Link> : <span className={styles.a + " " +  styles.a_disabled}>Previous</span>}
-    { hasNext ? <Link className={styles.a} href={ path + "/page/" + (currentPage + 1).toString() }>Next &gt;</Link> : <span className={styles.a + " " +  styles.a_disabled}>Next</span> }
-    { hasEnd ? <Link className={styles.a} href={ path + "/page/" + end.toString() }>End &gt;&gt;</Link> : <span className={styles.a + " " +  styles.a_disabled}>End </span> }
+    { hasStart ? <Link className={styles.a} href={ path }>&lt;&lt;&nbsp;Start</Link> : <span className={styles.a + " " +  styles.a_disabled}>&lt;&lt;&nbsp;Start</span> }
+    { hasPrevious ? <Link className={styles.a} href={ prevPageLink }>&lt;&nbsp;Prev</Link> : <span className={styles.a + " " +  styles.a_disabled}>&lt;&nbsp;Prev</span>}
+    { hasNext ? <Link className={styles.a} href={ path + "/page/" + (currentPage + 1).toString() }>Next&nbsp;&gt;</Link> : <span className={styles.a + " " +  styles.a_disabled}>Next&nbsp;&gt;</span> }
+    { hasEnd ? <Link className={styles.a} href={ path + "/page/" + end.toString() }>End&nbsp;&gt;&gt;</Link> : <span className={styles.a + " " +  styles.a_disabled}>End&nbsp;&gt;&gt;</span> }
   </div>
 }

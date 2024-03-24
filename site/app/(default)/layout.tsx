@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import '@/app/globals.css'
+import '@/app/(default)/globals.css'
 import Link from 'next/link'
 
 import Nav from '../../components/Nav'

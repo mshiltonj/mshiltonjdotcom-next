@@ -14,12 +14,12 @@
 .header {
     overflow: hidden;
     width: 24rem;
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 5.5vw, 3rem);
     line-height: 3rem;
     animation: typey 1.25s steps(13, end) forwards;
 }
 
 .logo {
-    height: 128px;
-    width: 128px;
+    /* height: 128px; */
+    width: clamp(48px, 12vw, 128px);
 }

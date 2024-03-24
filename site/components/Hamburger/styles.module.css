@@ -1,0 +1,69 @@
+.ham {  
+  --bar-width: 30px;
+  --bar-height: 5px;
+  --foreground: #999;
+  --background: #666;
+  --drop-menu-background: #ccc;
+  --drop-menu-foreground: #333;
+  --hamburger-gap: 4px;
+  --hamburger-height: calc(var(--bar-height) * 3  + var(--hamburger-gap) * 2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+}
+
+.dropMenu {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  right: 0;
+  top: calc(var(--hamburger-height) + 1.5rem);
+  background-color: var(--drop-menu-background);
+  color: var(--drop-menu-foreground);
+  transition: opacity .25s, height .25s;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #333;
+  box-shadow: 2px 2px 2px #333;
+
+  & > * {
+    padding: 1rem 1.5rem !important;
+  }
+}
+
+.hamburger:has(input:checked) ~ .dropMenu {
+  opacity: 1;
+  height: auto;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+
+  & input {
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    pointer-events: none;
+  }
+}
+
+.hamburger input, .hamburger::before, .hamburger::after {
+  content: '';
+  width: var(--bar-width);
+  height: var(--bar-height);
+  color: var(--background);
+  border-radius: 1000px;
+  background-color: var(--foreground);
+}
+
+.hamburger:has(input:checked) input, 
+.hamburger:has(input:checked)::before, 
+.hamburger:has(input:checked)::after {  
+  color: red;
+  background-color: var(--foreground);
+}
