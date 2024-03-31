@@ -1,11 +1,39 @@
 import styles from "./styles.module.css"
 export default function Page(){
   return <div className={styles.home}>
+    <div className={styles.background}>
+      <div className={styles.bgInner}>
+
+        <div className={styles.flarea}></div>
+        <div className={styles.flareb}></div>
+        <div className={styles.flarec}></div>
+
+        <div className={styles.flare2}></div>
+        <div className={styles.flare1}></div>
+        <div className={styles.flare3}></div>
+        <div className={styles.flare4}></div>
+        <div className={styles.flare5}></div>
+
+        <img src="/images/cloud.svg" alt="cloud" className={styles.cloud1} width="200" />
+        <img src="/images/cloud.svg" alt="cloud" className={styles.cloud2} width="200" />
+        <img src="/images/cloud.svg" alt="cloud" className={styles.cloud3} width="200" />
+
+      </div>
+    </div>
     <div className={styles.inner}>
-      <div className={styles.blurb}> Full&nbsp;Stack<br />Web Development </div>
-      <div><img className={styles.logo} src="/images/angry-penguin.jpg" alt="mshiltonj.com" /></div>
+      <div className={styles.blurb}> Full&nbsp;Stack<br />Web Development</div>
+
+      <div className={styles.promo}>
+      <img className={styles.logo} src="/images/angry-penguin.jpg" alt="mshiltonj.com" />
+      <div className={styles.qualities}>
+      <span>Flexible</span>
+      <span>Versatile</span>
+      <span>Reliable</span>
+      </div> 
+
+      </div>
+
       <div className={styles.name}> Steven Hilton </div>
-      <div className={styles.login}>What do I do? Lots!</div>
       <ul className={styles.keywords}>
         <li>Ruby&nbsp;on&nbsp;Rails</li>
         <li>Javascript</li>
@@ -21,7 +49,7 @@ export default function Page(){
         <li>Docker</li>
         <li>Agile</li>
       </ul>
-      <div><a className={styles.login} href="/about">Learn how I can help you</a></div>
+      <div><a className={styles.login} href="/about">How can I help you?</a></div>
     </div>
   </div>
 }

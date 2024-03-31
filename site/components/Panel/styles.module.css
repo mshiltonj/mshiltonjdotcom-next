@@ -1,16 +1,16 @@
 .root {
     margin: 0;
     padding: 0;
-    border: 1px solid #aaaaaa;
-    border-radius: .25rem;
+    border: 1px solid var(--blue3);
     margin-bottom: 1rem;
 }
 
 .h1 {
     margin: 0;
     font-weight: normal;
-    border-bottom: 1px solid #aaaaaa;
-    background-color: #cccccc;
+    border-bottom: 1px solid var(--blue3);
+    background-color: var(--gray4);
+    color: var(--blue5);
     padding: .5rem;
     font-size: 1rem;
     margin-bottom: 0;
@@ -18,4 +18,5 @@
 
 .inner {
     padding: 1rem;
+    background-color: var(--white);
 }

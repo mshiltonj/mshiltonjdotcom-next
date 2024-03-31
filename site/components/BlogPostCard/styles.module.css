@@ -19,7 +19,8 @@
   text-transform: capitalize;
   font-weight: bold;
   font-size: smaller;
-  color: white;
-  background-color: #333;
+  color: var(--white);
+  background-color: var(--blue5);
+  ;
   padding: .25rem 1rem;
 }

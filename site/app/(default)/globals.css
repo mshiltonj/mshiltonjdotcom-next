@@ -2,6 +2,32 @@
 :root {
   --orange: #c36d00;
   --black: #000000;
+
+  --black:#222222;
+  --gray1:#383838;
+  --gray2:#767676;
+  --gray3:#9f9f9f;
+  --gray4:#c8c8c8;
+  --gray5:#e3e3e3;
+  --white:#fcfcfc;
+
+  --blue1: #7887AB;
+  --blue2: #0D4DE1;
+  --blue3: #2E4272;
+  --blue4: #192B53;
+  --blue5: #061539;
+
+  --yellow1: #FFF2AA;
+  --yellow2: #FFD700;
+  --yellow3: #AA9839;
+  --yellow4: #7C6D1C;
+  --yellow5: #554800;
+
+  --orange1: #FFCEAA;
+  --orange2: #FF6C00;
+  --orange3: #AA6939;
+  --orange4: #7C451C;
+  --orange5: #7C451C;
 }
 
 *, *::after, *::before {
@@ -11,6 +37,7 @@
 body {
   margin: 0;
   display: grid;
+  line-height: 1.35rem;
   grid-template: 
     "header header header"
     "nav nav nav"
@@ -19,18 +46,32 @@ body {
   ;
   grid-template-columns: 1fr 1fr 25%;
 
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 11pt;
+  font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif; 
+  font-size: 12pt;
 }
 
 body header {
   padding: 3vw 3vw 0 3vw;
   grid-area: header;
-  background: var(--black);
-  color: var(--orange);
+  background: var(--blue5);
+  color: var(--orange2);
+}
+
+body:has(input#about_switch) {
+  & aside {
+    display: none;
+  }
+  & .pri {
+    grid-template-columns: 1fr;
+    grid-template: 
+      "main"
+    ;
+  }
 }
 
 body .pri {
+  color: var(--blue5);
+
   grid-area: pri;
   display: grid;
   padding: 3vw 3vw 0 3vw;
@@ -44,10 +85,10 @@ body .pri {
 
 body nav {
   grid-area: nav;
-  padding:0 3vw 0 3vw;
-  border-top: 1px solid #555;
-  border-bottom: 1px solid #555;
-  background-color: lightgray;
+  padding: 0 3vw 0 3vw;
+  border-top: 1px solid var(--blue5);
+  border-bottom: 1px solid var(--blue5);
+  background-color: var(--gray5);
 }
 
 @media (max-width: 768px) { 
@@ -58,14 +99,15 @@ body nav {
       "aside"
     ;
   }
-
-
 }
 
 body footer {
+  border-top: 1px solid var(--blue5);
+  color: var(--blue5);
+  background-color: var(--gray5);
   grid-area: footer;
-  padding: 1rem 3vw 0 3vw;
-  margin-bottom: 1rem;
+  padding: 1rem 3vw 1rem 3vw;
+  margin-top: 1rem;
 }
 
 .pri .main {
@@ -77,7 +119,16 @@ body footer {
 }
 
 a, a:link, a:visited {
+  display: inline-block;
   text-decoration: none;
+  color: var(--blue5)
+}
+
+aside a:not(:has(img)):hover {
+  color: var(--orange1);
+  background-color: var(--blue5);
+  margin-left: -.25rem;
+  padding: 0 .25rem;
 }
 
 aside ul {

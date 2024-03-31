@@ -12,13 +12,13 @@
     padding: clamp(.5rem, 1.5vw, 1rem);
     flex: 1;
     text-align: center;
-    color: #555;
+    color: var(--blue5);
     transition: background-color .25s, color .25s;
   }
 
   .link:hover {
-    background-color: #555;
-    color: var(--orange);
+    background-color: var(--blue5);
+    color: var(--orange2);
     /* color: purple; */
     transition: background-color .25s, color .25s
   }

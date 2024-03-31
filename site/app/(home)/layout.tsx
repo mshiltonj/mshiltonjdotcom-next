@@ -12,7 +12,7 @@ export default function RootLayout({
         <title>mshiltonj - Full Stack Web Development</title>
         <meta name="viewport" content="width=device-width" />
       </head>
-      <body className='' style={{backgroundColor: "black" }}>
+      <body className=''>
         {children}
       </body>
     </html>

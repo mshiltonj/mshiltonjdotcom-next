@@ -1,69 +1,321 @@
 .home {
-  --background-color: orange;
+  position: relative;
   --keyword-gap: 1rem;
-  --home-padding: 3rem;
+  --home-padding: 6vw;
   --home-margin: 3vh;
-
+  color: var(--white);
+  text-shadow: 2px 2px 2px var(--black);
+  background-image: url(/images/honeycomb.png);
+  box-shadow: 
+    inset .5vw .5vh 3vw var(--orange3),
+    inset .5vw -.5vh 3vw var(--orange3),
+    inset -.5vw .5vh 3vw var(--orange3),
+    inset -.5vw -.5vh 3vw var(--orange3)
+  ;
   display: flex;
-  height: calc(100vh - (2 * var(--home-margin)));
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: var(--home-margin);
   padding: var(--home-padding);
-  background-color: var(--background-color);
-  border: .5rem solid orangered;
+
   font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
   font-weight: 600;
   font-size: max(5vw, 28pt);
-  text-align: center;
+  /* text-align: center; */
 
   .login {
-    font-size: max(3.5vw, 22pt);
-  }
-
-  & a { 
+    font-size: clamp(16pt, 4vw, 22pt);
+    display: block;
+    text-align: center;
+    width: clamp(300px, 50vw, 500px);
+    margin:auto;
+    margin-top: 4vh;
+    background-image: linear-gradient(var(--orange2), var(--orange3));
+    padding-top: 2vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    padding-bottom: calc(2vh + 2px);
     border-radius: .5rem;
-    padding: .5rem 2rem;
-    display: inline-block;
-    color: black;
-    text-decoration: none; 
-    background-color: orangered;
+    text-decoration: none;   
+    color: var(--white);
 
-  
-  }
+    &:visited {
+      color: var(--white);
+    }
+
+    &:hover {
+      background-image: linear-gradient(var(--orange3), var(--orange2));      
+      padding-top: calc(2vh + 2px);
+      padding-bottom: 2vh;
+    }
+  }  
+
+}
+
+.promo {
+  display: flex;
+  gap: 3vw;
+}
+
+.qualities {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: max(.5rem, 1vw);
+  font-size: clamp( 12pt, 5vw, 18pt);
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 
+.bgInner {
+  position:relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.inner {
+  z-index: 10;
+}
+
+@keyframes cloudy1 {
+  0% {
+    transform: translateX(-130px) scale(0.4) translateY(-10vh);
+  }
+  100% {
+    transform: translateX(101vw) scale(0.4) translateY(-10vh);
+  }
+}
+
+@keyframes cloudy2 {
+  0% {
+    transform: translateX(-180px);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes cloudy3 {
+  0% {
+    transform: translateX(-200px) scale(-1.4, 1.4) translateY(1vh);
+  }
+  100% {
+    transform: translateX(100vw) scale(-1.4, 1.4) translateY(1vh);
+  }
+}
+
+.cloud1 {
+  position: absolute;
+  left: 0vw;
+  top: 0vh;
+  filter: blur(6px);
+  animation: 162s linear 0s infinite cloudy1;
+
+}
+
+.cloud2 {
+  position: absolute;
+  left: 0vw;
+  filter: blur(4px);
+  animation: 104s linear 0s infinite cloudy2;
+}
+
+.cloud3 {
+  position: absolute;
+  left: 0vw;
+  filter: blur(2px);
+  animation: 82s linear 0s infinite cloudy3;
+
+}
+
+
+.flare4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    120vw 30vw at 60vw 35vw,     
+    var(--white) 40%,
+    transparent 43%
+  );
+  opacity: 0.05;
+  filter: blur(2px);
+}
+
+.flare5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    10vw 10vw  at 52vw 45vw,
+    var(--white) 0, 
+    var(--gray4) 40%, 
+    transparent 100%
+  );
+  filter: blur(2px);
+  opacity: 0.25;
+}
+
+.flare3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    22vw 22vw  at 40vw 60vw,
+    transparent 0, 
+    transparent 88%, 
+    var(--white) 90%, 
+    transparent 92%, 
+    transparent 100%
+  );
+  filter: blur(2px);
+  opacity: .25;
+}
+
+.flare1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    10vw 10vw  at 75vw 20vw,
+    var(--white) 40%, 
+    transparent 100%
+  );
+  opacity: .55;
+  filter: blur(2px);
+}
+
+.flare2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    75vw 1.5vw  at 75vw 20vw,
+    var(--white) 0, 
+    var(--white) 30%, 
+    transparent 100%
+  );
+  opacity: .3;
+  filter: blur(2px);
+}
+
+
+.flare1::before {
+  position: absolute;
+  content: '';
+  top: 10vw;
+  left: 65vw;
+  width: 40vw;
+  height: 40vw;
+
+  background: radial-gradient(
+    20vw 1.5vw at 20vw 20vw,
+    var(--white) 0, 
+    var(--white) 30%, 
+    transparent 100%
+  );
+  filter: blur(2px);
+  opacity: .4;
+  transform: 
+    translateX(-10vw)
+    translateY(-10vw)
+    rotate(90deg)
+  ;
+}
+
+.flare2::after {
+  position: absolute;
+  content: '';
+  top: 10vw;
+  left: 65vw;
+  width: 40vw;
+  height: 40vw;
+  opacity: .4;
+
+  background: radial-gradient(
+    20vw 1.5vw at 20vw 20vw,
+    var(--white) 0, 
+    var(--white) 30%, 
+    transparent 100%
+  );
+  filter: blur(2px);
+  transform: 
+    translateX(-10vw)
+    translateY(-10vw)
+    rotate(45deg)
+  ;
+}
+
+
+.flare2::before {
+  position: absolute;
+  content: '';
+  top: 10vw;
+  left: 65vw;
+  width: 40vw;
+  height: 40vw;
+  opacity: .4;
+  z-index: -2;
+  background: radial-gradient(
+    20vw 1.5vw at 20vw 20vw,
+    var(--white) 0, 
+    var(--white) 30%, 
+    transparent 100%
+  );
+  filter: blur(2px);
+  transform: 
+    translateX(-10vw)
+    translateY(-10vw)
+    rotate(-45deg)
+  ;
+}
+
 .keywords {
+  background-image: linear-gradient(var(--blue3), var(--blue4));
   display: flex;
+  border-radius: .25rem;
+  margin-top: 1vh;
   gap: var(--keyword-gap);
-  padding: 0px;
+  padding: 1.5vw 4vw;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
   font-size: 16pt;
   text-indent: 0;
 }
 
 .logo {
-  margin: 1rem;
+  margin: 1vh 0;
   min-width: 100px;
   max-width: 150px;
   width:15vw;
+
 }
 
 .keywords li {
   font-family: sans-serif;
   list-style-type: none;
   font-weight: normal;
+  margin: 0
 }
-
-
-
-/* @media screen and (){
-
-} */
 
 
 @media screen and (max-width: 640px) {
@@ -77,7 +329,7 @@
     padding: var(--padding);
   }
   .inner {
-    transform: translateY(0);
+    z-index: 10;
   }
 
   .keywords {
