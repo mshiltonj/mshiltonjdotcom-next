@@ -1,3 +1,6 @@
+* {
+  min-width: 0;
+}
 
 :root {
   --orange: #c36d00;
@@ -58,7 +61,7 @@ body header {
 }
 
 body:has(input#about_switch) {
-  & aside {
+  & aside.sidebar {
     display: none;
   }
   & .pri {

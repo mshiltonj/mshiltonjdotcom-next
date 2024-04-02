@@ -1,9 +1,10 @@
+
 .h1 {
   line-height: 2.5rem
 }
 
-
 .blog_post pre {
   padding: 1rem 2rem;
   background-color: #ddd;
+  overflow: scroll;
 }

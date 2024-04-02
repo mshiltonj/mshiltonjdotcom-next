@@ -35,7 +35,7 @@ export async function generateStaticParams() {
 
 export default async function Page({params}: { params: { slug: string, YYYY: string, MM: string, wat: string } }) {
   const post = await blogUtils.getPost(params.slug, params.YYYY, params.MM)
-  return <div>
+  return <div className={styles.blog_post}>
     <h1 className={styles.h1}>{ post.metadata.title } </h1>
     <div className={styles.blog_post} dangerouslySetInnerHTML={{__html: post.content }}></div>
   </div>

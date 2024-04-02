@@ -19,4 +19,7 @@
 .inner {
     padding: 1rem;
     background-color: var(--white);
+    & a {
+        width: 100%
+    }
 }

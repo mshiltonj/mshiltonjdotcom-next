@@ -28,14 +28,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className=''>
-      <Header />
-      <Nav />
-      <div className='pri'>
-        <Aside />
-        {children}
-      </div>
-      <Footer />
-        </body>
+        <Header />
+        <Nav />
+        <div className='pri'>
+          <div className="main"> 
+            {children}
+          </div>
+          <Aside />
+        </div>
+        <Footer />
+      </body>
     </html>
   )
 }
