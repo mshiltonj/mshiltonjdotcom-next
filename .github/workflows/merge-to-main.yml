@@ -3,9 +3,9 @@ name: Merge to main
 on:
   workflow_dispatch:
 
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - main
 
 jobs:
   build_and_deploy:
@@ -23,7 +23,7 @@ jobs:
         run: npm install -g yarn
 
       - name: Install dependencies
-        working-directory: ./app
+        working-directory: site
         run: yarn install
 
       - name: Build site
