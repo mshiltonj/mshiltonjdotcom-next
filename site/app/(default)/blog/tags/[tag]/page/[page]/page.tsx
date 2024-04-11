@@ -15,11 +15,8 @@ export async function generateStaticParams() {
     const post = await blog_utils.getPostFromFullFile(file)
     if (post.metadata.tags) {
       for (const tag of post.metadata.tags) {
-        if (tagCounts.has(tag)) {
-          tagCounts.set(tag, tagCounts.get(tag) + 1)
-        } else {
-          tagCounts.set(tag, 1)
-        }
+        const thisTagCount = tagCounts.get(tag) || 0
+        tagCounts.set(tag, thisTagCount + 1)
       }
     }
   }
@@ -48,18 +45,18 @@ export default async function Page({params}: {params: { tag: string, page: strin
       tagPostFiles.push(post)
     }
   }
-  console.log("tagPostFilesLength:", tagPostFiles.length)
-  console.log("pageInt:", pageInt)
-  console.log("Config.PER_PAGE:", Config.PER_PAGE)
+  // console.log("tagPostFilesLength:", tagPostFiles.length)
+  // console.log("pageInt:", pageInt)
+  // console.log("Config.PER_PAGE:", Config.PER_PAGE)
   const start = pageInt * Config.PER_PAGE
   const end = start + Config.PER_PAGE
   const pagedTagPostFiles = tagPostFiles.slice(start, end)
-  console.log("pagedTagPostFiles:", pagedTagPostFiles)
+  // console.log("pagedTagPostFiles:", pagedTagPostFiles)
 
   return <div>
     <h1>Tag: {params.tag}</h1>
     {pagedTagPostFiles.map((post) => {
-      return <BlogPostCard post={post} />
+      return <BlogPostCard key={post.url} post={post} />
     })}
     <Paginator path={ "/blog/tags/" + params.tag } currentPage={pageInt} totalEntries={tagPostFiles.length} />  
   </div>

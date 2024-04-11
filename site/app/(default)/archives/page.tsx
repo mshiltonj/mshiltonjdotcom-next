@@ -2,10 +2,6 @@ import Link from "next/link";
 import blog_utils from "@/utils/blog_utils";
 import dates from "@/utils/dates";
 
-export async function generateStaticParams() {
-
-}
-
 export default async function Page(){
   const files = await blog_utils.deepDirListing(process.cwd() + "/posts", /.md$/)
 
@@ -26,17 +22,13 @@ export default async function Page(){
     }
   })
 
-
-
-
-
   return <div>
     <h1>Archives</h1>
     { Array.from(filesByYear.keys()).map((year) => {
-      return <div>
+      return <div key={year}>
         <div>{year}</div>
           { filesByYear.get(year)?.map((month) => {
-              return <span>
+              return <span key={month}>
                 <Link href={`/blog/${year}/${month}`}>{dates.monthNumToString(month)}</Link> 
               </span>
           })}        

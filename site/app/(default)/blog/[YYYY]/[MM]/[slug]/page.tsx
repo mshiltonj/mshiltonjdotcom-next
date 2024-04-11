@@ -1,4 +1,6 @@
+import { Metadata, ResolvingMetadata } from 'next'
 import blogUtils from '@/utils/blog_utils'
+import Config from "@/app.config"
 
 import styles from "./styles.module.css"
 
@@ -32,6 +34,20 @@ export async function generateStaticParams() {
   return(blogPosts)
 }
 
+export async function generateMetadata({params, searchParams}: {params: { slug: string, YYYY: string, MM: string }, searchParams: URLSearchParams}): Promise<Metadata> {
+  const post = await blogUtils.getPost(params.slug, params.YYYY, params.MM)
+
+  return {
+    openGraph:{
+      title: post.metadata.title,
+      description: post.metadata.description,
+      type: "article",
+      url: Config.SITE_HOST + post.url,
+      images: post.metadata.image ? [{url: post.metadata.image}] : [{url: Config.DEFAULT_OG_IMAGE}],
+    }
+  }
+
+}
 
 export default async function Page({params}: { params: { slug: string, YYYY: string, MM: string, wat: string } }) {
   const post = await blogUtils.getPost(params.slug, params.YYYY, params.MM)

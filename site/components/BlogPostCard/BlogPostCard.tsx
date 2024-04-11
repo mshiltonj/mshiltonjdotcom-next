@@ -5,7 +5,7 @@ export default function BlogPostCard({post, className}: {post: BlogPostType, cla
 
   className = className || ""
 
-  console.log("className:", className)
+  // console.log("className:", className)
 
   return <section key={Math.random()} className={className + " " + styles.blog_card }>
     <h1 className={ styles.h1 }><Link className={ styles.title } href={post.url}>{post.metadata.title}</Link></h1>

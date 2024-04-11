@@ -20,7 +20,7 @@ export default async function Page(){
 
   return <div> 
     { blogPosts.map((blogPost) => {
-      return <BlogPostCard className={styles.blog_card} post={blogPost} />
+      return <BlogPostCard key={blogPost.url} className={styles.blog_card} post={blogPost} />
     })}
     <Paginator path="/blog" currentPage={0} totalEntries={allFilesListing.length} />
   </div>

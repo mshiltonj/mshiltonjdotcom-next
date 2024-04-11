@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import './globals.css'
 import Panel from '@/components/Panel'
@@ -29,10 +30,10 @@ export default function Layout({
         <Panel title="About Software Freedom">
         <ul>
           <li><a href="http://www.gnu.org/philosophy/free-sw.html">What is Free Software?</a></li>
-          <li><a href="http://www.fsf.org/"><img src="/images/fsf.png" /></a><a href="http://www.fsf.org/">Free Software Foundation</a></li>
-          <li><a href="http://www.gnu.org/"><img src="/images/gnu.png" /></a><a href="http://www.gnu.org/">GNU's Not Unix</a></li>
+          <li><a href="http://www.fsf.org/"><Image alt="FSF logo" src="/images/fsf.png" /></a><a href="http://www.fsf.org/">Free Software Foundation</a></li>
+          <li><a href="http://www.gnu.org/"><Image alt="GNU logo" src="/images/gnu.png" /></a><a href="http://www.gnu.org/">GNU&apos;s Not Unix</a></li>
           <li><a href="http://www.gnu.org/copyleft/gpl.html">General Public License</a></li>
-          <li><a href="http://www.opensource.org/"><br /><img src="/images/opensource.png" /></a><a href="http://www.opensource.org/">Open Source Initiative</a></li>
+          <li><a href="http://www.opensource.org/"><br /><Image alt="OSS Logo" src="/images/opensource.png" /></a><a href="http://www.opensource.org/">Open Source Initiative</a></li>
         </ul>
         </Panel>
 

@@ -16,9 +16,9 @@ export default function Paginator({path, currentPage, totalEntries}: PaginatorPr
   const hasNext : boolean = currentPage < end
   const hasEnd : boolean = currentPage < end
 
-  console.log("currentPage:", currentPage)
+  // console.log("currentPage:", currentPage)
   const prevPageLink =  (currentPage === 1) ? path : path + "/page/" + (currentPage - 1).toString()
-  console.log("prevPageLink:", prevPageLink)
+  // console.log("prevPageLink:", prevPageLink)
 
   return <div className={styles.paginator}>
     { hasStart ? <Link className={styles.a} href={ path }>&lt;&lt;&nbsp;Start</Link> : <span className={styles.a + " " +  styles.a_disabled}>&lt;&lt;&nbsp;Start</span> }

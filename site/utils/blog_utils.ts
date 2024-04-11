@@ -5,8 +5,11 @@ import parseMD from 'parse-md'
 type PostMetadataType = {
   title: string,
   published?: Date | string,
+  description?: string,
+  author?: string,
+  slug: string,
   tags: string[],
-  slug?: string,
+  image?: string
 }
 
 type BlogPostType = {

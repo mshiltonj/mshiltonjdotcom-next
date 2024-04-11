@@ -25,7 +25,7 @@ export default async function Page({ params }: {params: { page: string }}){
 
   return <div> 
     { blogPosts.map((blogPost) => {
-      return <BlogPostCard post={blogPost} />
+      return <BlogPostCard key={blogPost.url} post={blogPost} />
     })}
     <Paginator path="/blog" currentPage={parseInt(params.page)} totalEntries={allFilesListing.length} />
   </div>

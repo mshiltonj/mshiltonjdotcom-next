@@ -27,7 +27,7 @@ export default async function Page({params}: {params: { YYYY: string, MM: string
   return <div>
    <h1>{dates.monthNumToString(params.MM)}, { params.YYYY }</h1>
     { blogPosts.map((blogPost) => {
-      return <BlogPostCard post={blogPost} />
+      return <BlogPostCard key={blogPost.url} post={blogPost} />
     })}
 
     

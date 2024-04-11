@@ -35,7 +35,7 @@ export default async function Page({params}: {params: { tag: string }}){
   return <div>
     <h1>Tag: {params.tag}</h1>
     {tagPostFilesSlice.map((post) => {
-      return <BlogPostCard post={post} />
+      return <BlogPostCard key={post.url} post={post} />
     })}
     <Paginator path={ "/blog/tags/" + params.tag } currentPage={0} totalEntries={tagPostFiles.length} />  
   </div>

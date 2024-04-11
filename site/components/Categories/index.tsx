@@ -9,7 +9,7 @@ export default async function Categories(){
     return <Panel title="Categories">
         <ul>
             { tags.map((tag) => {
-                return <li>
+                return <li key={tag}>
                     <Link href={"/blog/tags/" + tag}>{tag}</Link>
                 </li>
             })}
