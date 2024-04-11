@@ -21,19 +21,31 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Yarn
-        run: npm install -g yarn
+      # - name: Install Yarn
+      #   run: npm install -g yarn
 
-      - name: Install dependencies
-        working-directory: ${{env.SITE_DIR}}
-        run: yarn install
+      # - name: Install dependencies
+      #   working-directory: ${{env.SITE_DIR}}
+      #   run: yarn install
 
-      - name: Build site
-        working-directory: ${{env.SITE_DIR}}
-        run: yarn build
+      # - name: Build site
+        # working-directory: ${{env.SITE_DIR}}
+        # run: yarn build
+
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.PROD_KEY }}
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -H ${{ secrets.PROD_SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy site
-        run: ls -altr $SITE_DIR/dist
+        run: |
+          ls -altr 
+          echo "Deploying site"
+          ssh webapp@${{ secrets.PROD_SSH_HOST }} 'ls -latr'
 
         
 
