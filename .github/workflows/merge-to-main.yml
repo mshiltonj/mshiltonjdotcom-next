@@ -10,6 +10,9 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    env:
+      NODE_ENV: development
+      SITE_DIR: site
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,11 +26,11 @@ jobs:
         run: npm install -g yarn
 
       - name: Install dependencies
-        working-directory: site
+        working-directory: ${{env.SITE_DIR}}
         run: yarn install
 
       - name: Build site
-        working-directory: ./app
+        working-directory: ${{env.SITE_DIR}}
         run: yarn build
 
       - name: Deploy site
