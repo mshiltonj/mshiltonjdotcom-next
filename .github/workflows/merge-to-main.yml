@@ -34,7 +34,7 @@ jobs:
         run: yarn build
 
       - name: Deploy site
-        run: ls -altr site/dist
+        run: ls -altr $SITE_DIR/dist
 
         
 
