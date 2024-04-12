@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "add-blog": "npx tsx ./bin/add-blog.mts",
+    "reslug": "npx tsx ./bin/reslug.mts"
   },
   "dependencies": {
     "marked": "^11.1.1",
@@ -16,7 +18,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.12.7",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",

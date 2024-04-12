@@ -1,6 +1,7 @@
 {
+  "moduleResolution": "node",
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -31,6 +32,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
+    "**/*.mts",
     "**/*.tsx",
     ".next/types/**/*.ts",
     "dist/types/**/*.ts"
