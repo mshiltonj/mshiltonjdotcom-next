@@ -304,9 +304,10 @@
 
 .logo {
   margin: 1vh 0;
-  min-width: 100px;
-  max-width: 150px;
-  width:15vw;
+  width: clamp(100px, 15vw, 150px);
+  /* aspect-ratio no workie in flexbox?? */
+  height: clamp(100px, 15vw, 150px);
+  border: 1px solid var(--white);
 
 }
 

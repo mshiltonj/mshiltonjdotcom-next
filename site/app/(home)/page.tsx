@@ -15,9 +15,9 @@ export default function Page(){
         <div className={styles.flare4}></div>
         <div className={styles.flare5}></div>
 
-        <Image src="/images/cloud.svg" alt="cloud" className={styles.cloud1} width="200" />
-        <Image src="/images/cloud.svg" alt="cloud" className={styles.cloud2} width="200" />
-        <Image src="/images/cloud.svg" alt="cloud" className={styles.cloud3} width="200" />
+        <Image src="/images/cloud.svg" alt="cloud" className={styles.cloud1} width="200" height="200" />
+        <Image src="/images/cloud.svg" alt="cloud" className={styles.cloud2} width="200" height="200" />
+        <Image src="/images/cloud.svg" alt="cloud" className={styles.cloud3} width="200" height="200" />
 
       </div>
     </div>
@@ -25,7 +25,7 @@ export default function Page(){
       <div className={styles.blurb}> Full&nbsp;Stack<br />Web Development</div>
 
       <div className={styles.promo}>
-      <Image className={styles.logo} src="/images/angry-penguin.jpg" alt="mshiltonj.com" />
+      <Image className={styles.logo} src="/images/angry-penguin.jpg" width="150" height="150" alt="mshiltonj.com" />
       <div className={styles.qualities}>
       <span>Flexible</span>
       <span>Versatile</span>
