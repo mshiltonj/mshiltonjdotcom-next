@@ -1,0 +1,12 @@
+.year {
+  display: flex;
+  flex-direction: row;
+  gap: .75rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  /* .month {
+    display: inline-block;
+  } */
+}

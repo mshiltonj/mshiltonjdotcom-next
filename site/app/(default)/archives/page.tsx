@@ -2,6 +2,8 @@ import Link from "next/link";
 import blog_utils from "@/utils/blog_utils";
 import dates from "@/utils/dates";
 
+import styles from "./styles.module.css";
+
 export default async function Page(){
   const files = await blog_utils.deepDirListing(process.cwd() + "/posts", /.md$/)
 
@@ -26,13 +28,13 @@ export default async function Page(){
     <h1>Archives</h1>
     { Array.from(filesByYear.keys()).map((year) => {
       return <div key={year}>
-        <div>{year}</div>
+        <h3>{year}</h3>
+        <ul className={styles.year}>
           { filesByYear.get(year)?.map((month) => {
-              return <span key={month}>
-                <Link href={`/blog/${year}/${month}`}>{dates.monthNumToString(month)}</Link> 
-              </span>
-          })}        
-        </div>
+              return <li key={month}><Link className={styles.month} href={`/blog/${year}/${month}`}>{dates.monthNumToString(month)}</Link></li>
+          })}
+        </ul>
+      </div>
     }) }   
   </div>
 }
