@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SITE_DIR: site
-      PROD_TARGET_DIR: /var/sites/beta.mshiltonj.com/initial
+      PROD_TARGET_DIR: /var/sites/mshiltonj.com/initial
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -37,6 +37,7 @@ jobs:
         uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.PROD_KEY }}
+          log-public-key: false
 
       - name: Adding Known Hosts
         run: ssh-keyscan -H ${{ secrets.PROD_SSH_HOST }} >> ~/.ssh/known_hosts
